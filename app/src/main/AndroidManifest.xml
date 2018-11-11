@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tapdat.tapdat">
-    <uses-permission android:name="android.permission.NFC"/>
+
+    <uses-permission android:name="android.permission.NFC" />
 
     <application
         android:allowBackup="true"
@@ -16,19 +17,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".ApduService"
+            android:enabled="true"
             android:exported="true"
-            android:permission="android:BIND_NFC_SERVICE">
+            android:permission="android.permission.BIND_NFC_SERVICE" >
             <intent-filter>
-                <action android:name="android.nfc.cardemulation.HOST_APDU_SERVICE"/>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
             </intent-filter>
 
             <meta-data
-                android:name="android.nfc.cardemulation.HostApduService"
-                android:resource="@xml/adpuservice"/>
-
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/adpuservice" />
         </service>
+
     </application>
 
 </manifest>

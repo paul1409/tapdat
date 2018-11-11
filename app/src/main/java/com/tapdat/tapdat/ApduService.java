@@ -1,6 +1,5 @@
 package com.tapdat.tapdat;
 
-
 import android.nfc.cardemulation.HostApduService;
 import android.os.Bundle;
 import android.util.Log;
